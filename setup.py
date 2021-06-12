@@ -1,6 +1,7 @@
 from setuptools import setup, Extension, find_packages
 
 requirements_noversion = [
+'feedparser',
 'nltk',
 'numpy',
 'openpyxl',
