@@ -5,11 +5,9 @@ To install, simply copy and install using
 ```
 pip3 install .
 ```
-.
 
 This provides a command line tool that can be reconfigured in various ways.  
 For a comprehensive list of all actions, make use of
 ```
 news_raker --help
 ```
-.

@@ -2,6 +2,7 @@ import re
 import requests
 
 from .utils import extract_domain_name, pretty_print
+
 def scan(url, **kwargs):
     '''
     Fetch all identifiable links within the same domain.
@@ -42,3 +43,5 @@ def scan(url, **kwargs):
         if kwargs['debug']:
             pretty_print(urls)
     return urls
+
+print(scan.__docstring__)

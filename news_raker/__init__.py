@@ -42,7 +42,7 @@ parser.add_argument('-t', '--test',
 def run():
     global parser, logger
     args = parser.parse_args()
-
+    logger.info("Initiatialising")
     if args.test is not None:
         from .scanner import scan
         for src in args.test:

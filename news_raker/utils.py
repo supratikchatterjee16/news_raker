@@ -3,6 +3,8 @@ import re
 import json
 import pandas
 
+# Do not invoke logger in this file. It is meant to be an auxilliary standalone utility.
+
 LIB_DIRECTORY, _ = os.path.split(__file__)
 DATA_DIRECTORY = os.path.join(LIB_DIRECTORY, 'data')
 

@@ -9,24 +9,30 @@ dispatcher = RequestDispatcher()
 
 def parse_xml(content):
     print('xml')
-    print(content)
+    # print(content)
 
 def parse_html(content):
     print('html')
-    print(content)
+    # print(content)
 
 def parse_others(content):
     print('others')
-    print(content)
+    # print(content)
 
 def fetch_and_determine_type(source): # Needs to be a part of bot identification logic
-    content = dispatcher.get(source[1]['url'])
-    if 'xml' in content.text[:20]:
-        return 'xml', content.text
-    elif 'html' in content.text[:20]:
-        return 'html', content.text
-    else:
-        return 'other', content.text
+    global dispatcher, logger
+    try:
+        response = dispatcher.get(source[1]['url'])
+        
+        if response.code == 200 :
+            if 'xml' in content.text[:20]:
+                return 'xml', content.text
+            elif 'html' in content.text[:20]:
+                return 'html', content.text
+            else:
+                return 'other', content.text
+    except Exception as e:
+        logger.error(e)
 
 def scrape_sources(*args, **kwargs):
     sources = Source.get_all()
